@@ -1,0 +1,47 @@
+
+.form-widget-row{
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  padding: 1em;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+
+
+  .form-widget-col{
+    //todo: add css
+  }
+
+
+  .row-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .btn-add-row{
+      opacity: 0;
+      background-color: $color-info;
+      border-radius: 50%;
+      border: none;
+      color: #fff;
+
+      transition: 0.3s opacity;
+    }
+
+    &:hover .btn-add-row{
+      opacity: 1;
+    }
+
+
+  }
+
+
+}
+
+.form-builder-container .form-widget-row{
+  background: lighten($blue, 10%);
+}

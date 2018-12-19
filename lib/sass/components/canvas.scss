@@ -1,0 +1,14 @@
+.form-builder-canvas{
+  width: 80%;
+  height: auto;
+  border: 1px solid $blue;
+
+  transition: 0.3s border;
+
+
+  &.docking {
+    border: 1px dashed $green;
+  }
+
+
+}
