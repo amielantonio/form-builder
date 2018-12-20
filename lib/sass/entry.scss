@@ -11,6 +11,7 @@
 //Containers
 @import "components/container";
 @import "components/canvas";
+@import "components/sortable";
 
 
 //Sidebar
@@ -21,12 +22,3 @@
 
 //Toolbar
 @import "components/toolbar/toolbar";
-
-
-//DEPENDENCIES
-
-
-//FontAwesome
-@import "~@fortawesome/fontawesome-free/css/all.min.css";
-
-

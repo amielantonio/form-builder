@@ -1,0 +1,86 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*BRANDING*/
+/**
+
+  Todo:
+  [] responsive mixins
+  [] column mixins
+
+
+ */
+.form-builder-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  background: #F8F9FA; }
+
+.form-builder-canvas {
+  width: 85%;
+  height: auto;
+  border: 1px solid #37A5FA;
+  background: #fff;
+  transition: 0.3s border; }
+  .form-builder-canvas.docking {
+    border: 1px dashed #85F2A6; }
+
+.form-builder-sortable {
+  min-height: 100px; }
+
+.form-builder-sidebar {
+  width: 14%;
+  height: auto;
+  margin-right: 10px;
+  padding: 1.5em;
+  background-color: #E9ECEF; }
+  .form-builder-sidebar .form-builder-tool {
+    height: 80px;
+    width: 80px;
+    background: #fff;
+    color: #252525 !important;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: grab;
+    font-size: 90%;
+    padding: 0.65em;
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+    .form-builder-sidebar .form-builder-tool i {
+      margin: 10px;
+      color: #37A5FA; }
+  .form-builder-sidebar .form-builder-tool ~ .form-builder-tool {
+    margin-top: 10px; }
+
+.form-widget-row {
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  padding: 1em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row; }
+  .form-widget-row .row-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+    .form-widget-row .row-options .btn-add-row {
+      opacity: 0;
+      background-color: #69bbfb;
+      border-radius: 50%;
+      border: none;
+      color: #fff;
+      transition: 0.3s opacity; }
+    .form-widget-row .row-options:hover .btn-add-row {
+      opacity: 1; }
+
+.form-builder-container .form-widget-row {
+  background: #69bbfb; }

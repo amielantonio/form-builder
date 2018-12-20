@@ -1,13 +1,24 @@
 .form-builder-tool{
-  display: block;
-  padding: 10px 15px;
-  background: #37A5FA;
-  color: #fff;
+  height: 80px;
+  width: 80px;
+  background: #fff;
+  color: $black !important;
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
   cursor: grab;
+  font-size: 90%;
+  padding: 0.65em;
 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  i {
+    margin: 10px;
+    color: $blue;
+
+  }
 
 }
 

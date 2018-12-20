@@ -10,22 +10,10 @@
 </head>
 <body>
 
-<div class="container" style="padding-top: 30px;">
+<div class="" style="padding: 30px;">
 
-    <div class="form-builder-container">
-        <div class="form-builder-canvas">
-            <div class="form-builder-pane">
+    <div id="form-builder"></div>
 
-            </div>
-        </div>
-
-        <div class="form-builder-tools">
-            <a href="" class="form-builder-tool" data-form-type="row">Row</a>
-            <a href="" class="form-builder-tool" data-form-type="textbox">Textbox</a>
-            <a href="" class="form-builder-tool" data-form-type="password">Password</a>
-        </div>
-
-    </div>
 </div>
 
 <footer>
@@ -33,6 +21,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="release/js/app.js"></script>
 </footer>
+
+<script>
+  ( function($){
+
+    $( function(){
+      $( '#form-builder' ).formBuilder();
+    });
+
+  })(jQuery);
+</script>
 
 </body>
 </html>
