@@ -38,36 +38,47 @@
     $( function(){
       $( '#form-builder' ).formBuilder();
 
-      var newOrders=[];
+      var autocompleteList=[];
+      var masterList=[];
+      var bldg_address = "";
+      var ps_no="";
 
       $.getJSON( 'results.json', function( data ){
         $.each( data, function( key, val){
-         $.each( val, function( newKey, newVal){
+          $.each( val, function( newKey, newVal){
+            if( newKey == "Name"){
+              ps_no = newVal;
+            }
+            if( newKey == "BillingAddress" ) {
+              if( !newVal == ""){
+                bldg_address = newVal.street + ", " + newVal.city + ", " + newVal.stateCode + ", " + newVal.postalCode;
+              }
+            }
 
-           if( newKey == "Name") {
-             newOrders.push( newVal );
-           }
 
-         });
+          });
+          masterList[ps_no] = bldg_address;
+          autocompleteList.push(ps_no);
         })
       });
 
-
+      console.log( autocompleteList );
 
       $( "#tags" ).autocomplete({
-        source: newOrders,
-        minLength: 4,
+        source: autocompleteList,
+        select: function( event, ui ){
+          var token = ui.item.value;
+
+          if( token in masterList){
+            console.log( masterList[token] );
+          }
+        },
         _resizeMenu: function() {
           this.menu.element.outerWidth( 200 );
         }
       })
 
     });
-
-
-
-
-
   })(jQuery);
 </script>
 
