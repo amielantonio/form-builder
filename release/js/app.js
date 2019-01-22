@@ -90,44 +90,11 @@
 /*!*********************************!*\
   !*** ./lib/js/canvas/canvas.js ***!
   \*********************************/
-/*! exports provided: createCanvas */
+/*! exports provided: canvasContainer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createCanvas\", function() { return createCanvas; });\nfunction createSortableCanvas(){\r\n  return $( '<div>' , {\r\n    class: \"form-builder-sortable\"\r\n  });\r\n}//End Sortable\r\n\r\nfunction createCanvas(){\r\n  let canvas =  $( '<div>',{\r\n    class: \"form-builder-canvas\"\r\n  });\r\n\r\n  return canvas.append(createSortableCanvas());\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./lib/js/canvas/canvas.js?");
-
-/***/ }),
-
-/***/ "./lib/js/canvas/canvas_draggable.js":
-/*!*******************************************!*\
-  !*** ./lib/js/canvas/canvas_draggable.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("$( \".form-builder-tool\" ).draggable({\r\n  revert: 'invalid',\r\n  opacity: 0.8,\r\n  helper: 'clone',\r\n  cursor: 'grab',\r\n  cursorAt: {},\r\n  start: function(){\r\n    $(this).css( 'z-index', 500);\r\n    $( '.form-builder-canvas' ).addClass( 'docking' );\r\n  },\r\n  stop: function(){\r\n    $( '.form-builder-canvas' ).removeClass( 'docking' );\r\n  }\r\n});\r\n\n\n//# sourceURL=webpack:///./lib/js/canvas/canvas_draggable.js?");
-
-/***/ }),
-
-/***/ "./lib/js/canvas/canvas_droppable.js":
-/*!*******************************************!*\
-  !*** ./lib/js/canvas/canvas_droppable.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("$( '' ).droppable({\r\n  accept: '',\r\n  greedy: '',\r\n  drop: function(){\r\n\r\n  }\r\n});\r\n\n\n//# sourceURL=webpack:///./lib/js/canvas/canvas_droppable.js?");
-
-/***/ }),
-
-/***/ "./lib/js/canvas/canvas_sortable.js":
-/*!******************************************!*\
-  !*** ./lib/js/canvas/canvas_sortable.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("$( '.form-builder-canvas .form-builder-sotable' ).sortable({\r\n  placeholder: \"item-highlight-sorting\",\r\n  opacity: 0.8,\r\n  start: function(){\r\n\r\n  }\r\n});\r\n\n\n//# sourceURL=webpack:///./lib/js/canvas/canvas_sortable.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"canvasContainer\", function() { return canvasContainer; });\nfunction canvasContainer(){\r\n  let canvas = $( '<div>',{\r\n    class: \"form-builder-canvas\"\r\n  });\r\n\r\n  canvas.droppable({\r\n    accept: '.form-builder-tool',\r\n    drop: function( event, ui ){\r\n      let element = ui.draggable.data('html');\r\n\r\n      console.log( element );\r\n    }\r\n\r\n  });\r\n\r\n  return canvas;\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./lib/js/canvas/canvas.js?");
 
 /***/ }),
 
@@ -135,11 +102,11 @@ eval("$( '.form-builder-canvas .form-builder-sotable' ).sortable({\r\n  placehol
 /*!************************************!*\
   !*** ./lib/js/canvas/container.js ***!
   \************************************/
-/*! exports provided: createContainer */
+/*! exports provided: builderContainer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createContainer\", function() { return createContainer; });\nfunction createContainer(){\r\n  return $( '<div>',{\r\n    class: \"form-builder-container\"\r\n  });\r\n}\r\n\n\n//# sourceURL=webpack:///./lib/js/canvas/container.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"builderContainer\", function() { return builderContainer; });\nfunction builderContainer(){\r\n  return $( '<div>',{\r\n    class: \"form-builder-container\"\r\n  });\r\n}\r\n\n\n//# sourceURL=webpack:///./lib/js/canvas/container.js?");
 
 /***/ }),
 
@@ -147,10 +114,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!**********************************!*\
   !*** ./lib/js/canvas/sidebar.js ***!
   \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: sidebarContainer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("function createSidebar(){\r\n  var sidebar = $( \"<div>\", {\r\n    class: \"form-builder-sidebar\"\r\n  });\r\n\r\n  var widgets = {\r\n    \"row\": {\r\n      \"html\": \"div\",\r\n      \"name\": \"Row\",\r\n      \"options\": \"row\",\r\n      'icon': \"fas fa-th-large\"\r\n    },\r\n    \"textbox\": {\r\n      \"html\": \"input\",\r\n      \"name\": \"Textbox\",\r\n      \"options\": \"text\",\r\n      'icon': \"fas fa-font\"\r\n    },\r\n    \"email\": {\r\n      \"html\": \"input\",\r\n      \"name\": \"Email\",\r\n      \"options\": \"text\",\r\n      'icon': \"far fa-envelope\"\r\n    },\r\n    \"radio\": {\r\n      \"html\": \"input\",\r\n      \"name\": \"Radio\",\r\n      \"options\": \"choices\",\r\n      'icon': \"far fa-check-circle\"\r\n    },\r\n    \"checkbox\": {\r\n      \"html\": \"input\",\r\n      \"name\": \"Checkbox\",\r\n      \"options\": \"choices\",\r\n      'icon': \"far fa-check-square\"\r\n    },\r\n    \"date\": {\r\n      \"html\": \"input\",\r\n      \"name\": \"Date\",\r\n      \"options\": \"date\",\r\n      'icon': \"far fa-calendar-alt\"\r\n    },\r\n    \"password\": {\r\n      \"html\": \"input\",\r\n      \"name\": \"Password\",\r\n      \"options\": \"text\",\r\n      'icon': \"fas fa-lock\"\r\n    },\r\n    \"hidden\": {\r\n      \"html\": \"input\",\r\n      \"name\": \"Hidden\",\r\n      \"options\": \"hidden\",\r\n      'icon': \"fas fa-font\"\r\n    },\r\n    \"file\": {\r\n      \"html\": \"input\",\r\n      \"name\": \"file\",\r\n      \"options\": \"file\",\r\n      'icon': \"fas fa-file-upload\"\r\n    },\r\n    \"num\": {\r\n      \"html\": \"input\",\r\n      \"name\": \"Number\",\r\n      \"options\": \"text\",\r\n      'icon': \"fas fa-sort-numeric-up\"\r\n    },\r\n    \"tel\": {\r\n      \"html\": \"input\",\r\n      \"name\": \"Telephone\",\r\n      \"options\": \"text\",\r\n      'icon': \"fas fa-phone\"\r\n    },\r\n    \"select\": {\r\n      \"html\": \"select\",\r\n      \"name\": \"Dropdown\",\r\n      \"options\": \"dropdown\",\r\n      'icon': \"far fa-caret-square-down\"\r\n    },\r\n    \"textarea\": {\r\n      \"html\": \"textarea\",\r\n      \"name\": \"Textbox\",\r\n      \"options\": \"text\",\r\n      'icon': \"far fa-file-alt\"\r\n    },\r\n    \"button\": {\r\n      \"html\": \"button\",\r\n      \"name\": \"Button\",\r\n      \"options\": \"button\",\r\n      'icon': \"far fa-hand-point-up\"\r\n    },\r\n    \"paragraph\": {\r\n      \"html\": \"p\",\r\n      \"name\": \"Textbox\",\r\n      \"options\": \"paragraph\",\r\n      'icon': \"fas fa-paragraph\"\r\n    }\r\n  };\r\n\r\n  Object.keys( widgets ).forEach(function(k){\r\n\r\n    var icon = $( '<i>', {\r\n      class: widgets[k]['icon'] + \" fa-lg\"\r\n    });\r\n    var element = $( '<a>',{\r\n      class: \"form-builder-tool\",\r\n      \"data-build-type\": k,\r\n      \"data-html\": widgets[k]['html'],\r\n      \"data-build-options\": widgets[k]['options']\r\n    }).html( widgets[k]['name'] );\r\n\r\n    element.prepend( icon );\r\n    element.draggable({\r\n      revert: 'invalid',\r\n      opacity: 1,\r\n      helper: 'clone',\r\n      cursor: 'grab',\r\n      cursorAt: {},\r\n      start: function(){\r\n        $(this).css( 'z-index', 500);\r\n        $( '.form-builder-canvas' ).addClass( 'docking' );\r\n      },\r\n      stop: function(){\r\n        $( '.form-builder-canvas' ).removeClass( 'docking' );\r\n      }\r\n    });\r\n\r\n    sidebar.append( element );\r\n\r\n  });\r\n\r\n  return sidebar;\r\n\r\n}//End sidebar\r\n\r\n\r\nfunction createWidgets(){\r\n\r\n}\r\n\n\n//# sourceURL=webpack:///./lib/js/canvas/sidebar.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sidebarContainer\", function() { return sidebarContainer; });\nfunction createWidgets(){\r\n  let widgets = __webpack_require__( /*! ../widgets/common.json */ \"./lib/js/widgets/common.json\" );\r\n\r\n  let sidebarWidgets = $( \"<div></div>\" );\r\n\r\n  Object.keys( widgets ).forEach(function(k){\r\n\r\n    let icon = $( '<i>', {\r\n      class: widgets[k]['icon'] + \" fa-lg\"\r\n    });\r\n\r\n    let element = $( '<a>',{\r\n      class: \"form-builder-tool\",\r\n      \"data-build-type\": k,\r\n      \"data-html\": widgets[k]['html'],\r\n      \"data-build-options\": widgets[k]['options']\r\n    }).html( widgets[k]['name'] );\r\n\r\n    element.prepend( icon );\r\n    element.draggable({\r\n      revert: 'invalid',\r\n      opacity: 0.75,\r\n      helper: 'clone',\r\n      cursor: 'grab',\r\n      cursorAt: {},\r\n      start: function(){\r\n        $(this).css( 'z-index', 500);\r\n        $( '.form-builder-canvas' ).addClass( 'docking' );\r\n      },\r\n      stop: function(){\r\n        $( '.form-builder-canvas' ).removeClass( 'docking' );\r\n      }\r\n    });\r\n\r\n    sidebarWidgets.append( element );\r\n\r\n  });\r\n\r\n  return sidebarWidgets;\r\n\r\n}\r\n\r\nfunction sidebarContainer(){\r\n  let sidebar = $( \"<div>\", {\r\n    class: \"form-builder-sidebar\"\r\n  });\r\n\r\n  let elements = createWidgets();\r\n\r\n  sidebar.append( elements.children() );\r\n\r\n  return sidebar;\r\n\r\n}//End sidebar\r\n\n\n//# sourceURL=webpack:///./lib/js/canvas/sidebar.js?");
+
+/***/ }),
+
+/***/ "./lib/js/canvas/sortable.js":
+/*!***********************************!*\
+  !*** ./lib/js/canvas/sortable.js ***!
+  \***********************************/
+/*! exports provided: sortableCanvas */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sortableCanvas\", function() { return sortableCanvas; });\nfunction sortableCanvas(){\r\n\r\n  let sortable = $( '<div>' , {\r\n    class: \"form-builder-sortable\"\r\n  });\r\n\r\n  sortable.sortable({\r\n    placeholder: \"item-highlight-sorting\",\r\n    opacity: 0.8,\r\n    start: function(){\r\n\r\n    }\r\n  });\r\n\r\n\r\n  return sortable;\r\n}//End Sortable\r\n\n\n//# sourceURL=webpack:///./lib/js/canvas/sortable.js?");
 
 /***/ }),
 
@@ -162,7 +142,30 @@ eval("function createSidebar(){\r\n  var sidebar = $( \"<div>\", {\r\n    class:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _canvas_container__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./canvas/container */ \"./lib/js/canvas/container.js\");\n/* harmony import */ var _canvas_canvas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./canvas/canvas */ \"./lib/js/canvas/canvas.js\");\n\r\n\r\n\r\n( function ($){\r\n\r\n  __webpack_require__( /*! ./canvas/container */ \"./lib/js/canvas/container.js\" );\r\n  __webpack_require__( /*! ./canvas/canvas */ \"./lib/js/canvas/canvas.js\" );\r\n  __webpack_require__( /*! ./canvas/sidebar */ \"./lib/js/canvas/sidebar.js\" );\r\n\r\n\r\n  $.fn.formBuilder = function(){\r\n\r\n    return $(this).append( createBuilder() );\r\n\r\n  };\r\n\r\n  //Main function\r\n  function createBuilder(){\r\n\r\n    var element = Object(_canvas_container__WEBPACK_IMPORTED_MODULE_0__[\"createContainer\"])();\r\n    var canvas = Object(_canvas_canvas__WEBPACK_IMPORTED_MODULE_1__[\"createCanvas\"])();\r\n    // var sortable = createSortableCanvas();\r\n    // var sidebar = createSidebar();\r\n    //\r\n    //\r\n    // element.append( sidebar );\r\n    element.append( canvas );\r\n    //\r\n    // console.log( element );\r\n    return element;\r\n\r\n\r\n  }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n  function prepareCanvas() {\r\n    __webpack_require__( /*! ./canvas/canvas_draggable */ \"./lib/js/canvas/canvas_draggable.js\" );\r\n    __webpack_require__( /*! ./canvas/canvas_droppable */ \"./lib/js/canvas/canvas_droppable.js\" );\r\n    __webpack_require__( /*! ./canvas/canvas_sortable */ \"./lib/js/canvas/canvas_sortable.js\" );\r\n  }\r\n\r\n\r\n\r\n})(jQuery);\r\n\n\n//# sourceURL=webpack:///./lib/js/entry.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _canvas_canvas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./canvas/canvas */ \"./lib/js/canvas/canvas.js\");\n/* harmony import */ var _canvas_sortable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./canvas/sortable */ \"./lib/js/canvas/sortable.js\");\n/* harmony import */ var _canvas_sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./canvas/sidebar */ \"./lib/js/canvas/sidebar.js\");\n/* harmony import */ var _canvas_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./canvas/container */ \"./lib/js/canvas/container.js\");\n/* harmony import */ var _interface_components_row_row_interface__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./interface/components/row/row_interface */ \"./lib/js/interface/components/row/row_interface.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n( function ($){\r\n\r\n  $.fn.formBuilder = function(){\r\n\r\n    return $(this).append( createBuilder() );\r\n\r\n  };\r\n\r\n  //Main function\r\n  function createBuilder(){\r\n    let element = Object(_canvas_container__WEBPACK_IMPORTED_MODULE_3__[\"builderContainer\"])();\r\n    let canvas = Object(_canvas_canvas__WEBPACK_IMPORTED_MODULE_0__[\"canvasContainer\"])();\r\n    let sortable = Object(_canvas_sortable__WEBPACK_IMPORTED_MODULE_1__[\"sortableCanvas\"])();\r\n    let sidebar = Object(_canvas_sidebar__WEBPACK_IMPORTED_MODULE_2__[\"sidebarContainer\"])();\r\n\r\n    let rowCreator = Object(_interface_components_row_row_interface__WEBPACK_IMPORTED_MODULE_4__[\"rowInterface\"])();\r\n\r\n    sortable.append( rowCreator );\r\n    canvas.append( sortable );\r\n    element.append( sidebar );\r\n    element.append( canvas );\r\n\r\n    return element;\r\n  }\r\n\r\n})(jQuery);\r\n\n\n//# sourceURL=webpack:///./lib/js/entry.js?");
+
+/***/ }),
+
+/***/ "./lib/js/interface/components/row/row_interface.js":
+/*!**********************************************************!*\
+  !*** ./lib/js/interface/components/row/row_interface.js ***!
+  \**********************************************************/
+/*! exports provided: rowInterface */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"rowInterface\", function() { return rowInterface; });\nfunction rowInterface(){\r\n\r\n  let rowCreator = $( '<div>', {\r\n    class: \"\"\r\n  });\r\n\r\n}\r\n\n\n//# sourceURL=webpack:///./lib/js/interface/components/row/row_interface.js?");
+
+/***/ }),
+
+/***/ "./lib/js/widgets/common.json":
+/*!************************************!*\
+  !*** ./lib/js/widgets/common.json ***!
+  \************************************/
+/*! exports provided: row, textbox, email, radio, checkbox, date, password, hidden, file, num, tel, select, textarea, button, paragraph, default */
+/***/ (function(module) {
+
+eval("module.exports = {\"row\":{\"html\":\"div\",\"name\":\"Row\",\"options\":\"row\",\"icon\":\"fas fa-th-large\"},\"textbox\":{\"html\":\"input\",\"name\":\"Textbox\",\"options\":\"text\",\"icon\":\"fas fa-font\"},\"email\":{\"html\":\"input\",\"name\":\"Email\",\"options\":\"text\",\"icon\":\"far fa-envelope\"},\"radio\":{\"html\":\"input\",\"name\":\"Radio\",\"options\":\"choices\",\"icon\":\"far fa-check-circle\"},\"checkbox\":{\"html\":\"input\",\"name\":\"Checkbox\",\"options\":\"choices\",\"icon\":\"far fa-check-square\"},\"date\":{\"html\":\"input\",\"name\":\"Date\",\"options\":\"date\",\"icon\":\"far fa-calendar-alt\"},\"password\":{\"html\":\"input\",\"name\":\"Password\",\"options\":\"text\",\"icon\":\"fas fa-lock\"},\"hidden\":{\"html\":\"input\",\"name\":\"Hidden\",\"options\":\"hidden\",\"icon\":\"fas fa-font\"},\"file\":{\"html\":\"input\",\"name\":\"file\",\"options\":\"file\",\"icon\":\"fas fa-file-upload\"},\"num\":{\"html\":\"input\",\"name\":\"Number\",\"options\":\"text\",\"icon\":\"fas fa-sort-numeric-up\"},\"tel\":{\"html\":\"input\",\"name\":\"Telephone\",\"options\":\"text\",\"icon\":\"fas fa-phone\"},\"select\":{\"html\":\"select\",\"name\":\"Dropdown\",\"options\":\"dropdown\",\"icon\":\"far fa-caret-square-down\"},\"textarea\":{\"html\":\"textarea\",\"name\":\"Textbox\",\"options\":\"text\",\"icon\":\"far fa-file-alt\"},\"button\":{\"html\":\"button\",\"name\":\"Button\",\"options\":\"button\",\"icon\":\"far fa-square\"},\"paragraph\":{\"html\":\"p\",\"name\":\"Textbox\",\"options\":\"paragraph\",\"icon\":\"fas fa-paragraph\"}};\n\n//# sourceURL=webpack:///./lib/js/widgets/common.json?");
 
 /***/ }),
 
