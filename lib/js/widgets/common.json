@@ -1,66 +1,60 @@
 {
-  "row": {
-    "html": "div",
-    "name": "Row",
-    "options": "row",
-    "icon": "fas fa-th-large"
-  },
   "textbox": {
-    "html": "input",
+    "html": "textbox",
     "name": "Textbox",
     "options": "text",
     "icon": "fas fa-font"
   },
   "email": {
-    "html": "input",
+    "html": "email",
     "name": "Email",
     "options": "text",
     "icon": "far fa-envelope"
   },
   "radio": {
-    "html": "input",
+    "html": "radio",
     "name": "Radio",
     "options": "choices",
     "icon": "far fa-check-circle"
   },
   "checkbox": {
-    "html": "input",
+    "html": "checkbox",
     "name": "Checkbox",
     "options": "choices",
     "icon": "far fa-check-square"
   },
   "date": {
-    "html": "input",
+    "html": "datepicker",
     "name": "Date",
     "options": "date",
     "icon": "far fa-calendar-alt"
   },
   "password": {
-    "html": "input",
+    "html": "password",
     "name": "Password",
     "options": "text",
     "icon": "fas fa-lock"
   },
   "hidden": {
-    "html": "input",
+    "html": "hidden",
     "name": "Hidden",
     "options": "hidden",
     "icon": "fas fa-font"
   },
   "file": {
-    "html": "input",
+    "html": "file",
     "name": "file",
     "options": "file",
     "icon": "fas fa-file-upload"
   },
   "num": {
-    "html": "input",
+    "html": "num",
     "name": "Number",
     "options": "text",
     "icon": "fas fa-sort-numeric-up"
   },
   "tel": {
-    "html": "input",
+    "html": "tel",
     "name": "Telephone",
     "options": "text",
     "icon": "fas fa-phone"
@@ -84,7 +78,7 @@
     "icon": "far fa-square"
   },
   "paragraph": {
-    "html": "p",
+    "html": "paragraph",
     "name": "Textbox",
     "options": "paragraph",
     "icon": "fas fa-paragraph"
