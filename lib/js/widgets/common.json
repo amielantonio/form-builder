@@ -1,6 +1,6 @@
 {
   "textbox": {
-    "html": "textbox",
+    "html": "text",
     "name": "Textbox",
     "options": "text",
     "icon": "fas fa-font"
